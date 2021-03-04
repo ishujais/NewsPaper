@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="article-entry">
+        <h2 style="margin-left: 30px;">{{ object.title }}</h2>
+        <p style="margin-left: 30px;">by {{ object.author }} | {{ object.date }}</p>
+        <p style="margin-left: 30px;">{{ object.body }}</p>
+    </div>
+    <p style="margin-left: 30px;"><a href="{% url 'article_edit' article.pk %}">Edit</a> |
+        <a href="{% url 'article_delete' article.pk %}">Delete</a>
+    </p>
+    <p style="margin-left: 30px;">Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
+{% endblock content %}
